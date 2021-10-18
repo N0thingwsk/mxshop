@@ -63,7 +63,6 @@ func (s *UserServer) GetUserList(ctx context.Context, req *proto.PageInfo) (*pro
 	global.DB.Scopes(Paginate(int(req.Pn), int(req.PSize))).Find(&users)
 	for _, user := range users {
 		userInfoRsp := ModelToResponse(user)
-		fmt.Println(userInfoRsp)
 		rsp.Data = append(rsp.Data, &userInfoRsp)
 	}
 	return rsp, nil
