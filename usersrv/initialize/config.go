@@ -1,7 +1,6 @@
 package initialize
 
 import (
-	"fmt"
 	"github.com/spf13/viper"
 	"mxshop/usersrv/config"
 )
@@ -17,6 +16,5 @@ func InitConfig() error {
 	if err != nil {
 		return err
 	}
-	fmt.Println(config.UserConfig)
 	return nil
 }

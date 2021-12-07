@@ -4,3 +4,6 @@ mysql:
   port: 3600
   user: 'root'
   password: '123456'
+consul:
+  host: "127.0.0.1"
+  port: 8500

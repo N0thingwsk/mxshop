@@ -7,9 +7,15 @@ type MysqlConfig struct {
 	Password string `mapstructure:"password" json:"password"`
 }
 
+type ConsulConfig struct {
+	Host string `mapstructure:"host" json:"host"`
+	Port int    `mapstructure:"port" json:"port"`
+}
+
 type UserSrvConfig struct {
-	ServerName string
-	Mysql      MysqlConfig `mapstructuer:"mysql" json:"mysql"`
+	UserServiceName string       `mapstructure:"name" json:"name"`
+	Mysql           MysqlConfig  `mapstructure:"mysql" json:"mysql"`
+	Consul          ConsulConfig `mapstructure:"consul" json:"consul"`
 }
 
 var UserConfig *UserSrvConfig
